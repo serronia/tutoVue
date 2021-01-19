@@ -18,9 +18,9 @@
 	</p>
 
 	<h2>Contactez nous</h2>
-	<p>Adresse : 18 avenue du Beurre, Paris, France</p>
-	<p>Téléphone : 01 88 88 88 88</p>
-	<p>Email : hello@cafewithavue.bakery</p>
+	<p>Adresse : {{ addresse }}</p>
+	<p>Téléphone : {{ telephone }}</p>
+	<p>Email : {{ mail }}</p>
 	<p>Horaires :</p>
 	<ul>
 		<li>L-V: 06:00 à 16:00</li>
@@ -29,7 +29,7 @@
 	</ul>
 
 	<footer class="footer">
-		<p>Copyright {{ restaurantName }} 2019</p>
+		<p>Copyright {{ restaurantName }} {{ currentYear }}</p>
 	</footer>
 </div>
 
@@ -39,9 +39,14 @@
 		el: "#app",
 		data: {
 			restaurantName: "Café avec vue",
-			telephone : "",
-			adrresse: "",
-
+			telephone : "01 88 88 88 88",
+			addresse: "18 avenue du Beurre, Paris, France",
+			mail: "hello@cafewithavue.bakery"
+		},
+		computed : {
+			currentYear(){
+				return new Date().getFullYear()
+			}
 		}
 	})
 </script>
