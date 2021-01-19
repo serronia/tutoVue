@@ -1,1 +1,3 @@
 .idea
+node_modules
+my-first-vue-cli-app/node_modules
